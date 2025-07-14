@@ -56,14 +56,14 @@ function App() {
   const getRiskClass = (score) => {
     if (score > 0.9) return 'critical';
     if (score > 0.7) return 'high';
-    if (score > 0.3) return 'moderate';
+    if (score > 0.4) return 'moderate';
     return 'low';
   };
 
   const getRiskMessage = (score) => {
     if (score > 0.9) return '🚨 Critical Risk – Immediate Action Recommended';
     if (score > 0.7) return '❗ High Risk – Possible Fraud';
-    if (score > 0.3) return '⚠️ Moderate Risk – Monitor Closely';
+    if (score > 0.4) return '⚠️ Moderate Risk – Monitor Closely';
     return '✅ Low Risk – Safe';
   };
 
@@ -86,18 +86,7 @@ function App() {
         </div>
       )}
 
-      {history.length > 0 && (
-        <div className="history">
-          <h2>Risk Score History</h2>
-          <ul>
-            {history.map((entry, index) => (
-              <li key={index}>
-                {entry.time}: {entry.score.toFixed(2)}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      
     </div>
   );
 }
