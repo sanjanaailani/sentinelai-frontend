@@ -42,3 +42,19 @@ body {
   color: red;
   background: #ffe9e9;
 }
+
+.history {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  font-family: monospace;
+}
+
+.history ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.history li {
+  margin-bottom: 5px;
+}
