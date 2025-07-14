@@ -12,17 +12,25 @@ function App() {
   };
 
   useEffect(() => {
-    if (timestamps.length > 5) {
-      fetch('https://web-production-feaa.up.railway.app/analyze/', {
-
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ timestamps }),
+  if (timestamps.length > 5) {
+    fetch('https://web-production-feaa.up.railway.app/analyze/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ timestamps }),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Server error: ${res.status}`);
+        }
+        return res.json();
       })
-        .then((res) => res.json())
-        .then((data) => setRiskScore(data.riskScore));
-    }
-  }, [timestamps]);
+      .then((data) => setRiskScore(data.riskScore))
+      .catch((error) => {
+        console.error('Error analyzing:', error);
+        setRiskScore(null); // reset riskScore or show an error
+      });
+  }
+}, [timestamps]);
 
   return (
     <div className="container">
