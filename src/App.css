@@ -1,60 +1,109 @@
+/* App.css */
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f4f4f9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+  color: #222;
 }
 
 .container {
-  background: white;
+  max-width: 600px;
+  margin: 3rem auto;
   padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
   text-align: center;
-  max-width: 500px;
+}
+
+h1 {
+  color: #0071ce; /* Walmart blue */
+  margin-bottom: 0.25rem;
+  font-size: 2rem;
+}
+
+p {
+  margin-top: 0;
+  color: #555;
+  font-size: 1rem;
 }
 
 .input {
   width: 100%;
-  padding: 1rem;
-  margin-top: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 0.5rem;
+  padding: 12px 16px;
   font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  transition: border-color 0.3s;
 }
 
+.input:focus {
+  border-color: #ffc220; /* Walmart yellow */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 194, 32, 0.3);
+}
+
+/* Risk score messages */
 .risk {
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  border-left: 8px solid;
+  text-align: left;
 }
 
+/* Color-coded risk levels */
 .low {
-  color: green;
-  background: #e9ffe9;
+  background-color: #e6f7ec;
+  border-color: #28a745;
+  color: #19692c;
+}
+
+.moderate {
+  background-color: #fffbe6;
+  border-color: #ffc107;
+  color: #856404;
 }
 
 .high {
-  color: red;
-  background: #ffe9e9;
+  background-color: #fff3f3;
+  border-color: #dc3545;
+  color: #721c24;
 }
 
+.critical {
+  background-color: #fdecea;
+  border-color: #b21f2d;
+  color: #82111a;
+}
+
+/* History section */
 .history {
-  margin-top: 20px;
-  padding: 10px;
-  border-top: 1px solid #ccc;
-  font-family: monospace;
+  text-align: left;
+  margin-top: 2rem;
+  background-color: #f9fafb;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.history h2 {
+  margin-top: 0;
+  color: #0071ce;
 }
 
 .history ul {
-  list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 1rem;
+  list-style-type: square;
+  color: #444;
 }
 
 .history li {
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
